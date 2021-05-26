@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "keberclusterapp-80d9"
+    labels:
+        app: "keberclusterapp-80d9"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: keber-cluster-app821a-keberclusterapp-80d9.72177c8ae4bb4a9185cb.canadacentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "keberclusterapp-80d9"
+                servicePort: 80
