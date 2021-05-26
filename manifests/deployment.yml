@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "keberclusterapp-80d9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "keberclusterapp-80d9"
+  template:
+    metadata:
+      labels:
+        app: "keberclusterapp-80d9"
+    spec:
+      containers:
+        - name: "keberclusterapp-80d9"
+          image: "dockerprojectkubernet.azurecr.io/keberclusterapp"
+          ports:
+          - containerPort: 80
